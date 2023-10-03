@@ -178,7 +178,11 @@ var score = 80; //선언과 값 할당
 score = 90; // 값을 재할당
 ```
 
-![Alt text](image.png)
+<br/>
+<p align="center">
+    <img src='./img/image6.png' width = '600'>
+</p>
+
 
 위 이미지의 과정을 보면(값의 할당에서의 설명과 같음)
 
@@ -213,8 +217,11 @@ score = 90; // 값을 재할당
 - 단 식별자는 특수문자를 제외한 문자, 언더스코어(_), 달러기호($)로 시작해야한다. 숫자로 시작하는 것은 허용하지 않음
 - 예약어는 식별자로 사용할 수 없다
 
-<span style='font-size:18px;'>예약어 종류</span><br><br>
-![Alt text](image-1.png)
+<span style='font-size:18px;'>예약어 종류</span><br>
+<p align="center">
+    <img src='./img/image7.png' width = '600'>
+</p>
+
 
 ```javascript
 //여러개 한번에 선언 가능하지만 가독성이 떨어짐
