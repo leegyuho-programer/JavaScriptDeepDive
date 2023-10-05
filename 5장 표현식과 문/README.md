@@ -180,5 +180,3 @@ x = 1 + 2;
 <p align="center">
     <img src='./img/image 1.png' width = '300'>
 </p>
-
-<!-- 중간에 문제 한번 내보기 표현식과 문 구분하는 문제 -->
