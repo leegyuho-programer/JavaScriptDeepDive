@@ -4,7 +4,7 @@
 
 `원시 타입` : 단 하나의 값만 나타냄
 
-`객체 타입` : 다양한 타입의값을 하나의 단위로 구성한 복합적인 자료규조
+`객체 타입` : 다양한 타입의값을 하나의 단위로 구성한 복합적인 자료구조
 
 
 #### 객체는 0개 이상의 프로퍼티로 구성된 집합
@@ -27,7 +27,7 @@
 프로퍼티와 메서드 역할
 
 - 프로퍼티 : 객체의 상태를 나타내는 값
-- 메서드 : 프로퍼티를 참조하고 조잘할 수 있는 동작
+- 메서드 : 프로퍼티를 참조하고 조작할 수 있는 동작
 
 ## 10.2 객체 리터럴에 의한 객체 생성
 자바스크립트는 프로토타입 기반 객체 지향 언어로서 다양한 객체 생성 방법을 지원함
@@ -38,7 +38,7 @@ var person = {
     name: "victolee",
     email: "asdf@example.com",
     birth: "0225"
-}
+};
 ```
 
 #### 2. Object 생성자 함수
@@ -55,17 +55,17 @@ function Person(name,email){
     this.name = name;
     this.email = email;
     this.walk = "직립 보행"
-}
+};
 
 var person1 = new Person("victolee", "foo@example.com");
 ```
 #### 4. Object.create 메서드
 ```javascript
-Object.create(proto[, propertiesObject])
+Object.create(proto[, propertiesObject]);
 ```
 참고자료 https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/create
 
-5. 클래스
+#### 5. 클래스
 ```javascript
 class Person {
 	constructor(name, age, hasJob) {
@@ -86,7 +86,7 @@ let person3 = new Person("aaa", 30, false);
 ```
 <br>
 
-- 객체 리터럴의 중괄호는 코드블록을 의미하지 않음
+- 객체 리터럴의 중괄호는 코드블록을 의미하지 않는다
 - 객체 리터럴은 값으로 평가되는 표현식이다
 - 객체 리터럴의 닫는 중괄호 뒤에는 세미콜론을 붙인다.
 - 객체 생성한 이후에 프로퍼티를 동적으로 추가할 수 있다.
