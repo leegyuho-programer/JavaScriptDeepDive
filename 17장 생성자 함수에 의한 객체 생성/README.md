@@ -48,6 +48,7 @@ console.log(date); // Mon May 04 2020 08:36:33 GMT+0900 (대한민국 표준시)
 <br>
 <br>
 <br>
+<br>
 
 > # 📖17.2 생성자 함수
 
