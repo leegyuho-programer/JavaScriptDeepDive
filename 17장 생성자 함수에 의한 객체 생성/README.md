@@ -5,6 +5,11 @@
 
 - new 연산자와 함께 Object 생성자 함수를 호출하면 빈 객체를 생성하여 반환한다.
 
+```js
+// 빈 객체의 생성
+const person = new Object();
+```
+
 - 자바스크립트는 Object 생성자 함수 이외에도 **String**, **Number**, **Boolean**, **Function**, **Array**, **Date**, **RegExp**, **Promise** 등의 빌트인(built-in) 생성자 함수를 제공한다.
 
 ```js
@@ -76,14 +81,6 @@ const person2 = {
 console.log(person2.getPersonName()); // Hi, My Name is James
 ```
 
-- 객체는 프로퍼티를 통해 객체 고유의 상태(state)를 표현할 수 있다.
-
-- 메서드를 통해 프로퍼티를 참조하고 조작하는 동작(behavior)을 표현할 수 있다.
-
-- 따라서 프로퍼티는 객체마다 프로퍼티 값이 다를 수 있지만 메서드는 내용이 동일한 경우가 일반적이다.
-
-- 객체 리터럴에 의해 객체를 생성하는 경우 프로퍼티 구조가 동일함에도 불구하고 매번 같은 프로퍼티와 메서드를 기술해야 한다.
-
 <br>
 <br>
 <br>
@@ -131,7 +128,8 @@ function Person(name) {
 const person1 = Person('WI');
 
 console.log(person1); // undefined
-console.log(name); // WI << 🔍
+console.log(name); // WI
+// 일반 함수로서 호출된 Person 내의 this는 전역 객체를 가리킨다.
 ```
 
 <br>
@@ -236,7 +234,7 @@ function Person(name) {
 const person = new Person('WI');
 console.log(person); // {}
 
-// =============== 절취선 ==================
+// ===================================================================
 
 // case 3-2 : 생성자 함수 내부에서, 명시적인 원시값을 반환할 경우
 function Person(name) {
@@ -287,6 +285,10 @@ console.log(person); // Person { name: 'WI', getPersonName: [Function (anonymous
 
 ![https://poiemaweb.com/assets/fs-images/17-1.png](https://poiemaweb.com/assets/fs-images/17-1.png)
 
+- 모든 함수 객체는 반드시 내부 메서드 `[[ Call ]]` 을 가지고 있다.
+- 모든 함수 객체가 `[[ Construct ]]` 을 가지고 있는 것은 아니다.
+- 즉, 함수 객체는 `callable` 이면서 `constructor` 이거나, `callable` 이면서 `non-constructor` 다. 모든 함수 객체는 호출할 수 있지만, 모든 함수 객체가 생성자 함수로써 호출할 수 있는 것은 아니다.
+
 <br>
 <br>
 <br>
@@ -326,7 +328,7 @@ function Person(name) {
 
 // 생성자 함수가 new 연산자 없이, 일반 함수로 호출
 const person = Person('WI');
-console.log(person); // undefined << 🔍 반환 값이 없으므로 결과는 undefined
+console.log(person); // undefined <<  반환 값이 없으므로 결과는 undefined
 ```
 
 <br>
@@ -361,3 +363,5 @@ const person = Person('WI');
 // 그럼에도 불구하고, Person 인스터스가 정상적으로 생성되었고, 내부 메서드 호출됨
 console.log(person.getPersonName()); // Hi, My Name is WI
 ```
+
+- 단, `IE`에서는 이 기능을 지원하지 않습니다.
