@@ -215,8 +215,6 @@ const person = new Person('WI');
 console.log(person); // Person { name: 'WI', getPersonName: [Function (anonymous)] }
 ```
 
-💡 결론적으로, 생성자 함수 내부에서 명시적으로 this 가 아닌 다른 값을 반환 하는 것은, 생성자 함수의 기본 동작을 훼손하는 것이므로, 반드시 생성자 함수 내부에서는 return 문을 생략할 것
-
 ```js
 // case 3-1 : 생성자 함수 내부에서, 명시적인 다른 객체를 반환할 경우
 function Person(name) {
@@ -252,6 +250,8 @@ function Person(name) {
 const person = new Person('WI');
 console.log(person); // Person { name: 'WI', getPersonName: [Function (anonymous)] }
 ```
+
+💡 결론적으로, 생성자 함수 내부에서 명시적으로 this 가 아닌 다른 값을 반환 하는 것은, 생성자 함수의 기본 동작을 훼손하는 것이므로, 반드시 생성자 함수 내부에서는 return 문을 생략할 것
 
 <br>
 <br>
@@ -360,7 +360,7 @@ function Person(name) {
 // new 연산자 없이 생성자 함수를 호출
 const person = Person('WI');
 
-// 그럼에도 불구하고, Person 인스터스가 정상적으로 생성되었고, 내부 메서드 호출됨
+// 그럼에도 불구하고, Person 인스턴스가 정상적으로 생성되었고, 내부 메서드 호출됨
 console.log(person.getPersonName()); // Hi, My Name is WI
 ```
 
