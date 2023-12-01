@@ -165,12 +165,12 @@ const me = Person();
 - 클래스는 함수 객체로 평가된다. 따라서 객체 고유의 프로퍼티를 모두 갖고 있다.
 - prototype 프로퍼티가 가리키는 프로토타입 객체의 constructor 프로퍼티는 클래스 자신을 가리키고 있다.
 
-    <img src='./25.png' width = '400'>
+    <img src='./images/25.png' width = '400'>
 
 - constructor 내부에서 this에 추가한 프로퍼티는 인스턴스 프로퍼티가 된다.<br>
   => constructor 내부의 this는 클래스가 생성한 인스턴스를 가리킨다.
 
-    <img src='./25.1.png' width = '400'>
+    <img src='./images/25.1.png' width = '400'>
 
 ### constructor와 생성자 함수의 차이점
 
@@ -303,7 +303,7 @@ me instanceof Object; // -> true
 me.constructor === Person; // -> true
 ```
 
-<img src='./25.2.png' width = '400'>
+<img src='./images/25.2.png' width = '400'>
 
 ## 📌25.5.3 정적 메서드
 
