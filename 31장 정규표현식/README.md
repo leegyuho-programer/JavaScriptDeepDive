@@ -31,7 +31,7 @@ const regexp = /is/i;
 regexp.text(target); //true
 ```
 
--> tartget 문자열에 대해 정규 표현식 regexp 패턴을 검색하여 매칭 결과 불리언으로 return
+-> target 문자열에 대해 정규 표현식 regexp 패턴을 검색하여 매칭 결과 불리언으로 return
 
 ### ❤️ 2. 생성자 함수
 
@@ -57,7 +57,7 @@ count("Is this all there is?", "is"); //3
 ```js
 const target = "Is this all there is?";
 const regExp = /is/;
-rexExp.exec(target); //["is", index: 5, input: ~~]
+regExp.exec(target); //["is", index: 5, input: ~~]
 ```
 
 -> 모든 매칭 결과 반환하는 'g'플래그 지정해도, **첫번째 매칭 결과만** 반환함!!
@@ -80,7 +80,7 @@ regExp.test(target); //true
 ```js
 const target = "Is this all there is?";
 const regExp = /is/;
-rexExp.exec(target); //["is", index: 5, input: ~~]
+regExp.exec(target); //["is", index: 5, input: ~~]
 ```
 
 -> 모든 패턴을 검색하는 'g'플래그 지정하면 모든 매칭 결과 배열로 반환
@@ -128,7 +128,7 @@ target.match(regExp);
 
 ```js
 const target = "Is this all there is?";
-const regEXP = /../g;
+const regEXP = /.../g;
 target.match(regExp);
 ```
 
@@ -158,7 +158,7 @@ target.match(regExp); //["AA", AA"]
 
 ```js
 const target = "A AA B BB Aa Bb AAA";
-const regExp = /A{1,}/g;
+const regExp = /A{2,}/g;
 target.match(regExp); //["AA", AAA"]
 ```
 
@@ -179,9 +179,9 @@ target.match(regExp); //["A", "AA", "A", "AAA"]
 {0,1}과 같음
 
 ```js
-const target = 'color colour';
-const regExp = /colou/r/g;
-target.match(regExp);  //["color", "colour"]
+const target = "color colour";
+const regExp = /colou?r/g;
+target.match(regExp); //["color", "colour"]
 ```
 
 ### ❤️ OR 검색 (|)
@@ -200,7 +200,7 @@ const regExp = /A+|B+/g;
 target.match(regExp); //["A", "AA", "B", "BB", "A", "B"]
 ```
 
--> 간단히 표현하면, **[AB]+**와 같이 나타낼 수도 있음
+-> 간단히 표현하면, [AB]+와 같이 나타낼 수도 있음
 
 #### A~Z 한 번 이상 반복되는 문자열
 
@@ -230,7 +230,7 @@ target.match(regExp); //["12","345"]
 -> 쉼표 포함시키기: /[0-9,]+/g
 -> **'\d'가 숫자를 의미: [0-9] **
 -> **'\D'는 문자를 의미**
--> **'\w': 알파벳, 순자, 언더스코어 ([A-Za-z0-9M])**
+-> **'\w': 알파벳, 순자, 언더스코어 ([A-Za-z0-9])**
 -> '\W': 알파벳, 숫자, 언더스코어가 아닌 문자
 
 ```js
@@ -346,8 +346,20 @@ const target = "010-1234-5678";
 
 ```js
 const target = 'abc#123';
-/([^A-Za-z0-9]/gi).test(target); //true
+/([^A-Za-z0-9]/gi).test(target)/; //true
 ```
 
 -> 특수 문자 제거: replace메서드 사용
 target.replace([^A-Za-z0-9]/gi, '') //abc123
+
+### ❤️ 주민등록번호
+
+\d{6} - [1-4]\d{6}
+
+### ❤️ IP 주소
+
+([0-9]{1,3}) . ([0-9]{1,3}) . ([0-9]{1,3}) . ([0-9]{1,3})
+
+### ❤️ 숫자 1000단위 콤마찍기
+
+변수명.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","
