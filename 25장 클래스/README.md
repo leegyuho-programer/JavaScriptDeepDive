@@ -233,7 +233,6 @@ console.log(me); // {}
 ```
 
 - 하지만 원시값을 반환할 경우 무시되고 암묵적으로 this가 반환된다.
-- construct 내부에서 return 문을 반드시 생략해야 한다.
 
 ```js
 class Person {
@@ -248,6 +247,8 @@ class Person {
 const me = new Person('Lee');
 console.log(me); // Person { name: "Lee" }
 ```
+
+- construct 내부에서 return 문을 반드시 생략해야 한다.
 
 ## 📌25.5.2 프로토타입 메서드
 
@@ -268,7 +269,7 @@ const me = new Person('Lee');
 me.sayHi(); // Hi! My name is Lee
 ```
 
-- 클래스 몸체에서 정의한 메서드는 prototype 프로퍼티에 메서드를 추가하지 않다로 기본적으로 프로토타입 메서드가 된다.
+- 클래스 몸체에서 정의한 메서드는 prototype 프로퍼티에 메서드를 추가하지 않아도 기본적으로 프로토타입 메서드가 된다.
 
 ```js
 class Person {
@@ -308,7 +309,7 @@ me.constructor === Person; // -> true
 ## 📌25.5.3 정적 메서드
 
 - 인스턴스를 생성하지 않아도 호출할 수 있는 메서드
-- 생성자 함수의 경우 명시적으로 생성자 함수에 메서드를 추가하여 생성
+- 생성자 함수의 경우 명시적으로 생성자 함수에 메서드를 추가하여 생성할 수 있다.
 
 ```js
 // 생성자 함수
@@ -345,7 +346,7 @@ class Person {
 - 정적 메서드 호출
 
 ```js
-// 정적 메서드는 프로로타입 메서드처럼 인스턴스로 호출하지 않고 클래스를 호출한다.
+// 정적 메서드는 프로토타입 메서드처럼 인스턴스로 호출하지 않고 클래스로 호출한다.
 Person.sayHi(); // Hi!
 
 // 인스턴스 생성
