@@ -735,34 +735,34 @@ constructor() {}
 
 ```javascript
 class Person {
-	constructor(name, age, hasJob) {  //생성자 함수,초기화
-		this.name = name;
-		this.age = age;
-		this.hasJob = hasJob;
-	}
-	speak() {
-		console.log("hello");
-	}
-	eat() {
-		console.log("먹는다");
-	}
+  constructor(name, age, hasJob) {
+    //생성자 함수,초기화
+    this.name = name;
+    this.age = age;
+    this.hasJob = hasJob;
+  }
+  speak() {
+    console.log("hello");
+  }
+  eat() {
+    console.log("먹는다");
+  }
 }
 
 class childClass extends Person {
-	constructor(name, age, hasJob, height) {  //생성자 함수,초기화
-		super(name, age, hasJob);  //부모class에서 기능 가져옴
-        this.height = height;  //추가 변수값
-	}
-	speak(){  //오버라이딩
-    	super.speak()  //부모클래스(Person) 기능을 가져옴
-    	console.log("안녕")
-    }
-
+  constructor(name, age, hasJob, height) {
+    //생성자 함수,초기화
+    super(name, age, hasJob); //부모class에서 기능 가져옴
+    this.height = height; //추가 변수값
+  }
+  speak() {
+    //오버라이딩
+    super.speak(); //부모클래스(Person) 기능을 가져옴
+    console.log("안녕");
+  }
 }
 
-
-let person3 = new Person("aaa", 30, false, 180);  // 180 추가로 넣음
-출처: https://uou413.tistory.com/3 [꾸앙꾸앙:티스토리]
+let person3 = new Person("aaa", 30, false, 180); // 180 추가로 넣음
 ```
 
 1. 서브 클래스에서 constructor를 생략하지 않는 경우 서브 클래스의 constructor에서 반드시 super를 호출해야한다
