@@ -76,7 +76,7 @@ $ json-server --watch db.json
 포트 변경하려면 port 옵션 추가
 
 ```
-#포트 변경 / watch 옵션 적용
+#포트 변경 / port 옵션 적용
 $ json-server --watch db.json --port 5000
 ```
 
